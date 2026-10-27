@@ -1,0 +1,77 @@
+/* Large, background-free chevrons; a soft drop shadow keeps them legible over bright backdrops and card art. */
+.arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--viewer-text);
+  opacity: 0.85;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.arrow svg {
+  width: 40px;
+  height: 40px;
+}
+
+.arrow:hover:not(:disabled) {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.arrow:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.prev {
+  order: -1;
+}
+
+.next {
+  order: 1;
+}
+
+/* Phones: the arrows sit in narrow gutters beside the card (not on its art), still swipe-first. */
+@media (max-width: 600px) {
+  .arrow {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 56px;
+    margin-top: -28px;
+    z-index: 1;
+  }
+  .arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    transition: none;
+  }
+}

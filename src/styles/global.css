@@ -1,0 +1,63 @@
+:root {
+  --bg: #0d0b0a;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f4f1ee;
+  --muted: rgba(255, 255, 255, 0.6);
+  --accent: #ff5a36;
+  /* Names, numbers and headings: Titillium Web (OFL), bundled from @fontsource. */
+  --display-font: 'Titillium Web', system-ui, sans-serif;
+  --viewer-bg: #0d0b0a;
+  --viewer-glass: rgba(0, 0, 0, 0.4);
+  --viewer-text: #fff;
+  --radius: 10px;
+  /* The site header bar (src/ui/SiteHeader): 60px plus its 1px border; two rows on phones. */
+  --site-header-height: 61px;
+  color-scheme: dark;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --site-header-height: 92px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Scrolling an element into view (or focusing it) keeps it clear of the pinned header. */
+  scroll-padding-top: var(--site-header-height);
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Titillium Web', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

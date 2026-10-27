@@ -1,0 +1,62 @@
+.strip {
+  position: relative;
+  z-index: 2;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 10px 0 16px;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 4px 50vw;
+  display: flex;
+  gap: 8px;
+  width: max-content;
+}
+
+.thumb {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.thumb:hover {
+  opacity: 0.85;
+}
+
+.thumb {
+  width: 46px;
+}
+
+/* The same 64px height on its side. */
+.thumb.landscape {
+  width: 90px;
+}
+
+.current,
+.current:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .thumb {
+    width: 37px;
+  }
+  .thumb.landscape {
+    width: 72px;
+  }
+}

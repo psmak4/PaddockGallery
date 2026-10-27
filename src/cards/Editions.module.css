@@ -1,0 +1,143 @@
+/* Special editions (src/cards/editions.ts). Each replaces the card's team-colour field, adds a sheen
+   over the whole card, and a small label in the top-right corner. The card face sets data-edition. */
+
+/* ---------- Paddock Gold ---------- */
+
+/* Replaces the team-colour field (z-index 0, under the number and photo). It turns, so it is a square
+   centred on the card and wider than the card's diagonal (portrait 63×88: ~172cqw; landscape: ~123cqw):
+   at any angle it covers every corner. The lines radiate from that same centre, so they spin in place. */
+.goldField {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 190cqw;
+  height: 190cqw;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(255, 249, 214, 0.55) 0deg 0.9deg, rgba(255, 249, 214, 0) 0.9deg 3.6deg),
+    repeating-conic-gradient(from 1.8deg at 50% 50%, rgba(92, 56, 0, 0.28) 0deg 0.6deg, rgba(92, 56, 0, 0) 0.6deg 3.6deg),
+    radial-gradient(circle 95cqw at 50% 50%, #fff7cf 0%, #f6d368 18%, #d9a52b 40%, #a8740f 62%, #5c3a03 86%, #2f1d01 100%);
+  transform: translate(-50%, -50%);
+  /* A slow drift, not a spin: one turn every two minutes. */
+  animation: swirl 120s linear infinite;
+}
+
+@keyframes swirl {
+  from {
+    transform: translate(-50%, -50%) rotate(0turn);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+/* A band of light that sweeps across the whole card, photo included. */
+.goldSheen {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 44%,
+    rgba(255, 226, 140, 0.45) 50%,
+    rgba(255, 255, 255, 0.2) 56%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  mix-blend-mode: overlay;
+  animation: sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0% {
+    background-position: 130% 0;
+  }
+  60%,
+  100% {
+    background-position: -30% 0;
+  }
+}
+
+/* ---------- Carbon ---------- */
+
+/* A black twill weave that stays still. --u scales the weave with the card, so it stays fine-grained
+   from the thumbnail strip to the viewer. */
+.carbonField {
+  --u: max(1.5px, 1.1cqw);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(27deg, #151515 var(--u), transparent var(--u)) 0 var(--u),
+    linear-gradient(207deg, #151515 var(--u), transparent var(--u)) calc(var(--u) * 2) 0,
+    linear-gradient(27deg, #262626 var(--u), transparent var(--u)) 0 calc(var(--u) * 2),
+    linear-gradient(207deg, #262626 var(--u), transparent var(--u)) calc(var(--u) * 2) var(--u),
+    linear-gradient(90deg, #1c1c1c calc(var(--u) * 2), transparent calc(var(--u) * 2)),
+    linear-gradient(#1e1e1e 25%, #191919 25%, #191919 50%, transparent 50%, transparent 75%, #2a2a2a 75%, #2a2a2a);
+  background-color: #121212;
+  background-size: calc(var(--u) * 4) calc(var(--u) * 4);
+}
+
+/* The glossy resin over the weave: a soft highlight across the top, darker toward the bottom. */
+.carbonField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 60% at 30% 0%, rgba(255, 255, 255, 0.22), transparent 60%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), transparent 40%, rgba(0, 0, 0, 0.35));
+}
+
+/* A cool, faint light across the lacquer: same sweep as the gold, much quieter. */
+.carbonSheen {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(220, 230, 240, 0.22) 48%, rgba(255, 255, 255, 0.1) 54%, transparent 66%);
+  background-size: 250% 100%;
+  mix-blend-mode: screen;
+  animation: sweep 6s ease-in-out infinite;
+}
+
+/* ---------- the label ---------- */
+.label {
+  position: absolute;
+  z-index: 6;
+  top: 6.2cqw;
+  right: 5cqw;
+  padding: 0.55em 0.95em 0.5em;
+  border-radius: 999px;
+  font-family: var(--display-font);
+  /* Small on purpose: it marks the card without competing with it. */
+  font-size: max(7px, 3.1cqw);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.goldLabel {
+  color: #fff1bd;
+  background: rgba(40, 24, 0, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 228, 140, 0.55);
+}
+
+.carbonLabel {
+  color: #e6ebf0;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(200, 210, 220, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .goldField,
+  .goldSheen,
+  .carbonSheen {
+    animation: none;
+  }
+}

@@ -1,0 +1,431 @@
+[
+  {
+    "id": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "country": "Germany",
+    "countryCode": "de",
+    "colour": "#00D7B6",
+    "driverIds": [
+      "antonelli",
+      "russell"
+    ],
+    "principal": {
+      "name": "Toto Wolff",
+      "since": "2013",
+      "country": "Austria",
+      "countryCode": "at"
+    },
+    "standing": {
+      "position": 1,
+      "points": 607,
+      "wins": 12
+    },
+    "season": {
+      "races": 18,
+      "wins": 12,
+      "podiums": 23,
+      "poles": 12,
+      "bestFinish": 1,
+      "dnfs": 2,
+      "fastestLaps": 9,
+      "oneTwos": 3,
+      "headToHead": {
+        "antonelli": 13,
+        "russell": 5
+      }
+    },
+    "car": "common/f1/2026/mercedes/2026mercedescarright",
+    "logo": "common/f1/2026/mercedes/2026mercedeslogowhite"
+  },
+  {
+    "id": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "country": "Italy",
+    "countryCode": "it",
+    "colour": "#ED1131",
+    "driverIds": [
+      "hamilton",
+      "leclerc"
+    ],
+    "principal": {
+      "name": "Frédéric Vasseur",
+      "since": "2023",
+      "country": "France",
+      "countryCode": "fr"
+    },
+    "standing": {
+      "position": 2,
+      "points": 474,
+      "wins": 2
+    },
+    "season": {
+      "races": 18,
+      "wins": 2,
+      "podiums": 12,
+      "poles": 0,
+      "bestFinish": 1,
+      "dnfs": 3,
+      "fastestLaps": 5,
+      "oneTwos": 0,
+      "headToHead": {
+        "leclerc": 9,
+        "hamilton": 9
+      }
+    },
+    "car": "common/f1/2026/ferrari/2026ferraricarright",
+    "logo": "common/f1/2026/ferrari/2026ferrarilogowhite"
+  },
+  {
+    "id": "red_bull",
+    "name": "Red Bull Racing",
+    "nationality": "Austrian",
+    "country": "Austria",
+    "countryCode": "at",
+    "colour": "#4781D7",
+    "driverIds": [
+      "max_verstappen",
+      "hadjar"
+    ],
+    "principal": {
+      "name": "Laurent Mekies",
+      "since": "2025-07",
+      "country": "France",
+      "countryCode": "fr"
+    },
+    "standing": {
+      "position": 3,
+      "points": 355,
+      "wins": 2
+    },
+    "season": {
+      "races": 18,
+      "wins": 2,
+      "podiums": 12,
+      "poles": 2,
+      "bestFinish": 1,
+      "dnfs": 5,
+      "fastestLaps": 2,
+      "oneTwos": 0,
+      "headToHead": {
+        "max_verstappen": 12,
+        "hadjar": 3
+      }
+    },
+    "car": "common/f1/2026/redbullracing/2026redbullracingcarright",
+    "logo": "common/f1/2026/redbullracing/2026redbullracinglogowhite"
+  },
+  {
+    "id": "mclaren",
+    "name": "McLaren",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "colour": "#F47600",
+    "driverIds": [
+      "norris",
+      "piastri"
+    ],
+    "principal": {
+      "name": "Andrea Stella",
+      "since": "2023",
+      "country": "Italy",
+      "countryCode": "it"
+    },
+    "standing": {
+      "position": 4,
+      "points": 355,
+      "wins": 2
+    },
+    "season": {
+      "races": 17,
+      "wins": 2,
+      "podiums": 7,
+      "poles": 3,
+      "bestFinish": 1,
+      "dnfs": 4,
+      "fastestLaps": 2,
+      "oneTwos": 0,
+      "headToHead": {
+        "norris": 9,
+        "piastri": 7
+      }
+    },
+    "car": "common/f1/2026/mclaren/2026mclarencarright",
+    "logo": "common/f1/2026/mclaren/2026mclarenlogowhite"
+  },
+  {
+    "id": "rb",
+    "name": "Racing Bulls",
+    "nationality": "Italian",
+    "country": "Italy",
+    "countryCode": "it",
+    "colour": "#6C98FF",
+    "driverIds": [
+      "lawson",
+      "arvid_lindblad"
+    ],
+    "principal": {
+      "name": "Alan Permane",
+      "since": "2025-07",
+      "country": "United Kingdom",
+      "countryCode": "gb"
+    },
+    "standing": {
+      "position": 5,
+      "points": 102,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 5,
+      "dnfs": 1,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "lawson": 10,
+        "arvid_lindblad": 4
+      }
+    },
+    "car": "common/f1/2026/racingbulls/2026racingbullscarright",
+    "logo": "common/f1/2026/racingbulls/2026racingbullslogowhite"
+  },
+  {
+    "id": "alpine",
+    "name": "Alpine",
+    "nationality": "French",
+    "country": "France",
+    "countryCode": "fr",
+    "colour": "#00A1E8",
+    "driverIds": [
+      "gasly",
+      "colapinto"
+    ],
+    "principal": {
+      "name": "Flavio Briatore",
+      "since": "2025-05",
+      "country": "Italy",
+      "countryCode": "it"
+    },
+    "standing": {
+      "position": 6,
+      "points": 69,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 1,
+      "bestFinish": 6,
+      "dnfs": 5,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "gasly": 11,
+        "colapinto": 6
+      }
+    },
+    "car": "common/f1/2026/alpine/2026alpinecarright",
+    "logo": "common/f1/2026/alpine/2026alpinelogowhite"
+  },
+  {
+    "id": "haas",
+    "name": "Haas F1 Team",
+    "nationality": "American",
+    "country": "United States",
+    "countryCode": "us",
+    "colour": "#9C9FA2",
+    "driverIds": [
+      "bearman",
+      "ocon"
+    ],
+    "principal": {
+      "name": "Ayao Komatsu",
+      "since": "2024",
+      "country": "Japan",
+      "countryCode": "jp"
+    },
+    "standing": {
+      "position": 7,
+      "points": 30,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 5,
+      "dnfs": 5,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "ocon": 7,
+        "bearman": 10
+      }
+    },
+    "car": "common/f1/2026/haasf1team/2026haasf1teamcarright",
+    "logo": "common/f1/2026/haasf1team/2026haasf1teamlogowhite"
+  },
+  {
+    "id": "audi",
+    "name": "Audi",
+    "nationality": "German",
+    "country": "Germany",
+    "countryCode": "de",
+    "colour": "#F50537",
+    "driverIds": [
+      "hulkenberg",
+      "bortoleto"
+    ],
+    "principal": {
+      "name": "Jonathan Wheatley",
+      "since": "2025-04",
+      "country": "United Kingdom",
+      "countryCode": "gb"
+    },
+    "standing": {
+      "position": 8,
+      "points": 23,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 4,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "hulkenberg": 9,
+        "bortoleto": 7
+      }
+    },
+    "car": "common/f1/2026/audi/2026audicarright",
+    "logo": "common/f1/2026/audi/2026audilogowhite"
+  },
+  {
+    "id": "williams",
+    "name": "Williams",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "colour": "#1868DB",
+    "driverIds": [
+      "sainz",
+      "albon"
+    ],
+    "principal": {
+      "name": "James Vowles",
+      "since": "2023",
+      "country": "United Kingdom",
+      "countryCode": "gb"
+    },
+    "standing": {
+      "position": 9,
+      "points": 12,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 7,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "albon": 7,
+        "sainz": 10
+      }
+    },
+    "car": "common/f1/2026/williams/2026williamscarright",
+    "logo": "common/f1/2026/williams/2026williamslogowhite"
+  },
+  {
+    "id": "aston_martin",
+    "name": "Aston Martin",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "colour": "#229971",
+    "driverIds": [
+      "alonso",
+      "stroll"
+    ],
+    "principal": {
+      "name": "Adrian Newey",
+      "since": "2026",
+      "country": "United Kingdom",
+      "countryCode": "gb"
+    },
+    "standing": {
+      "position": 10,
+      "points": 7,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 18,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "stroll": 3,
+        "alonso": 10
+      }
+    },
+    "car": "common/f1/2026/astonmartin/2026astonmartincarright",
+    "logo": "common/f1/2026/astonmartin/2026astonmartinlogowhite"
+  },
+  {
+    "id": "cadillac",
+    "name": "Cadillac",
+    "nationality": "American",
+    "country": "United States",
+    "countryCode": "us",
+    "colour": "#909090",
+    "driverIds": [
+      "bottas",
+      "perez"
+    ],
+    "principal": {
+      "name": "Graeme Lowdon",
+      "since": "2025",
+      "country": "United Kingdom",
+      "countryCode": "gb"
+    },
+    "standing": {
+      "position": 11,
+      "points": 0,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 13,
+      "dnfs": 13,
+      "fastestLaps": 0,
+      "oneTwos": 0,
+      "headToHead": {
+        "perez": 12,
+        "bottas": 4
+      }
+    },
+    "car": "common/f1/2026/cadillac/2026cadillaccarright",
+    "logo": "common/f1/2026/cadillac/2026cadillaclogowhite"
+  }
+]

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0d0b0a" />
+    <meta name="description" content="PaddockGallery: this season's Formula 1 drivers and teams, one card at a time." />
+    <title>PaddockGallery</title>
+    <!-- Driver and car photos come from formula1.com's media CDN: open the connection while the app loads. -->
+    <link rel="preconnect" href="https://media.formula1.com" />
+    <!-- Every page reads the same three small files (src/data/catalog.ts): start fetching them now,
+         before the app's JS runs. src/preload.test.ts checks the paths match. -->
+    <link rel="preload" as="fetch" href="/data/meta.json" crossorigin="anonymous" />
+    <link rel="preload" as="fetch" href="/data/drivers.json" crossorigin="anonymous" />
+    <link rel="preload" as="fetch" href="/data/teams.json" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

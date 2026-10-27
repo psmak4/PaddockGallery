@@ -1,0 +1,5 @@
+{
+  "_comment": "Corrections applied last, over everything the APIs return. Keyed by Jolpica id; any field of a driver or team in public/data can be set (nested objects merge, e.g. { \"career\": { \"poles\": 104 } }). Examples: a team's \"colour\" (\"#RRGGBB\"), a driver's \"photo\" (formula1.com media path, or null to hide it), a \"bio\".",
+  "drivers": {},
+  "teams": {}
+}

@@ -1,0 +1,96 @@
+/*
+ * View transitions (https://developer.mozilla.org/docs/Web/API/View_Transition_API).
+ * Names in use:
+ *   card-hero        grid card ⇄ viewer card, and the viewer card between neighbours
+ * Everything else (including the viewer's blurred backdrop and its UI) crossfades as part of root,
+ * which keeps unchanged UI steady. View-transition pseudo-elements belong to <html> itself, so
+ * attribute-qualified selectors must attach directly: html[x]::view-transition-…, no space.
+ * Browsers without the API simply navigate without animation.
+ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 240ms;
+}
+
+/* Grid → viewer (and back): the card morphs into place. */
+::view-transition-group(card-hero) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Viewer card → card: slide in the direction of travel instead of morphing in place. */
+html[data-nav-direction]::view-transition-group(card-hero) {
+  animation: none;
+}
+
+html[data-nav-direction='forward']::view-transition-old(card-hero) {
+  animation: 280ms cubic-bezier(0.4, 0, 0.2, 1) both pg-slide-out-left;
+}
+
+html[data-nav-direction='forward']::view-transition-new(card-hero) {
+  animation: 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both pg-slide-in-right;
+}
+
+html[data-nav-direction='back']::view-transition-old(card-hero) {
+  animation: 280ms cubic-bezier(0.4, 0, 0.2, 1) both pg-slide-out-right;
+}
+
+html[data-nav-direction='back']::view-transition-new(card-hero) {
+  animation: 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both pg-slide-in-left;
+}
+
+@keyframes pg-slide-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-30%) scale(0.96);
+  }
+}
+
+@keyframes pg-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30%) scale(0.96);
+  }
+}
+
+@keyframes pg-slide-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(30%) scale(0.96);
+  }
+}
+
+@keyframes pg-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30%) scale(0.96);
+  }
+}
+
+@keyframes pg-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pg-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: no morphs or slides, just quick crossfades. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation: none !important;
+  }
+
+  ::view-transition-old(*) {
+    animation: 120ms ease both pg-fade-out !important;
+  }
+
+  ::view-transition-new(*) {
+    animation: 120ms ease both pg-fade-in !important;
+  }
+}

@@ -1,0 +1,8 @@
+.superpowers/
+node_modules/
+dist/
+.env*
+.netlify/
+.playwright-mcp/
+*.tsbuildinfo
+.cache/

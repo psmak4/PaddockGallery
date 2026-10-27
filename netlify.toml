@@ -1,0 +1,30 @@
+[build]
+  # The data is committed (public/data/, refreshed by hand with `npm run data`), so a deploy only builds the app.
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Vite's hashed bundles never change: cache them for a year. (Netlify's default makes every visit re-check.)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Data changes only on a redeploy: reuse it for 10 minutes, then serve it while refreshing in the background.
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, stale-while-revalidate=86400"
+
+# Missing data files must 404 (not fall through to index.html) so the app can say "not found".
+[[redirects]]
+  from = "/data/*"
+  to = "/404.json"
+  status = 404
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

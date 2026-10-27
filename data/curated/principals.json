@@ -1,0 +1,16 @@
+{
+  "_comment": "Team principals: the source of truth (no API covers them). Keyed by Jolpica constructorId. 'nationality' is a demonym (\"British\") that picks the flag; add new ones to src/data/build/countries.ts. Remove 'verify' once you've checked an entry. Principals change mid-season: edit, then run npm run data.",
+  "principals": {
+    "mclaren": { "name": "Andrea Stella", "since": "2023", "nationality": "Italian", "verify": true },
+    "mercedes": { "name": "Toto Wolff", "since": "2013", "nationality": "Austrian", "verify": true },
+    "red_bull": { "name": "Laurent Mekies", "since": "2025-07", "nationality": "French", "verify": true },
+    "ferrari": { "name": "Frédéric Vasseur", "since": "2023", "nationality": "French", "verify": true },
+    "williams": { "name": "James Vowles", "since": "2023", "nationality": "British", "verify": true },
+    "rb": { "name": "Alan Permane", "since": "2025-07", "nationality": "British", "verify": true },
+    "aston_martin": { "name": "Adrian Newey", "since": "2026", "nationality": "British", "verify": true },
+    "haas": { "name": "Ayao Komatsu", "since": "2024", "nationality": "Japanese", "verify": true },
+    "audi": { "name": "Jonathan Wheatley", "since": "2025-04", "nationality": "British", "verify": true },
+    "alpine": { "name": "Flavio Briatore", "since": "2025-05", "nationality": "Italian", "verify": true },
+    "cadillac": { "name": "Graeme Lowdon", "since": "2025", "nationality": "British", "verify": true }
+  }
+}

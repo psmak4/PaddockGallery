@@ -1,0 +1,78 @@
+.card {
+  position: relative;
+  perspective: 1800px;
+}
+
+.portrait {
+  height: var(--card-height);
+  aspect-ratio: 63 / 88;
+}
+
+/* Team cards lie on their side; the back's padding is set off the shorter side. */
+.landscape {
+  height: var(--landscape-height);
+  aspect-ratio: 88 / 63;
+  --face-pad: 4.5%;
+}
+
+.flipper {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 560ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  border-radius: 4.5% / 3.2%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.front {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* The card face fills the front. */
+.front > * {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.face.back {
+  transform: rotateY(180deg);
+}
+
+
+.landscape .face {
+  border-radius: 3.2% / 4.5%;
+}
+
+/* A landscape back has room for larger type than the portrait one (CardBack's default). */
+.landscape .back {
+  font-size: clamp(11px, calc(var(--landscape-height) * 0.03), 17px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flipper {
+    transition: none;
+  }
+}

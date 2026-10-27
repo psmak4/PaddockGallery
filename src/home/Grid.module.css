@@ -1,0 +1,97 @@
+/* Drivers: one block per team (its heading and two cards), the blocks flowing in a grid. */
+.teamGroups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 30px 26px;
+  margin-top: 22px;
+}
+
+.teamHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--team);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.teamHeading a {
+  color: #fff;
+}
+
+.teamHeading a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--team);
+  text-underline-offset: 3px;
+}
+
+.teamHeading span {
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pair,
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.pair {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Teams: one grid of landscape cards. */
+.grid {
+  margin-top: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.grid .link,
+.grid .cardBox {
+  border-radius: 3.2% / 4.5%;
+}
+
+.link {
+  display: block;
+  border-radius: 4.5% / 3.2%;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+}
+
+.cardBox {
+  border-radius: 4.5% / 3.2%;
+}
+
+@media (max-width: 600px) {
+  .teamGroups {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pair {
+    gap: 9px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

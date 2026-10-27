@@ -1,0 +1,878 @@
+[
+  {
+    "id": "antonelli",
+    "code": "ANT",
+    "number": 12,
+    "givenName": "Andrea Kimi",
+    "familyName": "Antonelli",
+    "nationality": "Italian",
+    "country": "Italy",
+    "countryCode": "it",
+    "dateOfBirth": "2006-08-25",
+    "teamId": "mercedes",
+    "standing": {
+      "position": 1,
+      "points": 365,
+      "wins": 9
+    },
+    "season": {
+      "races": 18,
+      "wins": 9,
+      "podiums": 15,
+      "poles": 7,
+      "bestFinish": 1,
+      "dnfs": 0,
+      "fastestLaps": 7
+    },
+    "career": {
+      "starts": 42,
+      "wins": 9,
+      "podiums": 18,
+      "poles": 7,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2025,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/mercedes/andant01/2026mercedesandant01right"
+  },
+  {
+    "id": "russell",
+    "code": "RUS",
+    "number": 63,
+    "givenName": "George",
+    "familyName": "Russell",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "dateOfBirth": "1998-02-15",
+    "teamId": "mercedes",
+    "standing": {
+      "position": 2,
+      "points": 242,
+      "wins": 3
+    },
+    "season": {
+      "races": 18,
+      "wins": 3,
+      "podiums": 8,
+      "poles": 5,
+      "bestFinish": 1,
+      "dnfs": 2,
+      "fastestLaps": 2
+    },
+    "career": {
+      "starts": 170,
+      "wins": 8,
+      "podiums": 32,
+      "poles": 13,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2019,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/mercedes/georus01/2026mercedesgeorus01right"
+  },
+  {
+    "id": "hamilton",
+    "code": "HAM",
+    "number": 44,
+    "givenName": "Lewis",
+    "familyName": "Hamilton",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "dateOfBirth": "1985-01-07",
+    "teamId": "ferrari",
+    "standing": {
+      "position": 3,
+      "points": 241,
+      "wins": 1
+    },
+    "season": {
+      "races": 18,
+      "wins": 1,
+      "podiums": 6,
+      "poles": 0,
+      "bestFinish": 1,
+      "dnfs": 1,
+      "fastestLaps": 1
+    },
+    "career": {
+      "starts": 398,
+      "wins": 106,
+      "podiums": 208,
+      "poles": 104,
+      "titles": 7,
+      "titleYears": [
+        2008,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "debut": {
+        "season": 2007,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/ferrari/lewham01/2026ferrarilewham01right"
+  },
+  {
+    "id": "leclerc",
+    "code": "LEC",
+    "number": 16,
+    "givenName": "Charles",
+    "familyName": "Leclerc",
+    "nationality": "Monegasque",
+    "country": "Monaco",
+    "countryCode": "mc",
+    "dateOfBirth": "1997-10-16",
+    "teamId": "ferrari",
+    "standing": {
+      "position": 5,
+      "points": 233,
+      "wins": 1
+    },
+    "season": {
+      "races": 18,
+      "wins": 1,
+      "podiums": 6,
+      "poles": 0,
+      "bestFinish": 1,
+      "dnfs": 2,
+      "fastestLaps": 4
+    },
+    "career": {
+      "starts": 191,
+      "wins": 9,
+      "podiums": 56,
+      "poles": 27,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2018,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/ferrari/chalec01/2026ferrarichalec01right"
+  },
+  {
+    "id": "max_verstappen",
+    "code": "VER",
+    "number": 3,
+    "givenName": "Max",
+    "familyName": "Verstappen",
+    "nationality": "Dutch",
+    "country": "Netherlands",
+    "countryCode": "nl",
+    "dateOfBirth": "1997-09-30",
+    "teamId": "red_bull",
+    "standing": {
+      "position": 4,
+      "points": 236,
+      "wins": 2
+    },
+    "season": {
+      "races": 18,
+      "wins": 2,
+      "podiums": 10,
+      "poles": 2,
+      "bestFinish": 1,
+      "dnfs": 3,
+      "fastestLaps": 2
+    },
+    "career": {
+      "starts": 251,
+      "wins": 73,
+      "podiums": 137,
+      "poles": 50,
+      "titles": 4,
+      "titleYears": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "debut": {
+        "season": 2015,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/redbullracing/maxver01/2026redbullracingmaxver01right"
+  },
+  {
+    "id": "hadjar",
+    "code": "HAD",
+    "number": 6,
+    "givenName": "Isack",
+    "familyName": "Hadjar",
+    "nationality": "French",
+    "country": "France",
+    "countryCode": "fr",
+    "dateOfBirth": "2004-09-28",
+    "teamId": "red_bull",
+    "standing": {
+      "position": 8,
+      "points": 105,
+      "wins": 0
+    },
+    "season": {
+      "races": 15,
+      "wins": 0,
+      "podiums": 2,
+      "poles": 0,
+      "bestFinish": 3,
+      "dnfs": 2,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 39,
+      "wins": 0,
+      "podiums": 3,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2025,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/redbullracing/isahad01/2026redbullracingisahad01right"
+  },
+  {
+    "id": "norris",
+    "code": "NOR",
+    "number": 1,
+    "givenName": "Lando",
+    "familyName": "Norris",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "dateOfBirth": "1999-11-13",
+    "teamId": "mclaren",
+    "standing": {
+      "position": 6,
+      "points": 211,
+      "wins": 2
+    },
+    "season": {
+      "races": 17,
+      "wins": 2,
+      "podiums": 5,
+      "poles": 3,
+      "bestFinish": 1,
+      "dnfs": 3,
+      "fastestLaps": 2
+    },
+    "career": {
+      "starts": 170,
+      "wins": 13,
+      "podiums": 49,
+      "poles": 19,
+      "titles": 1,
+      "titleYears": [
+        2025
+      ],
+      "debut": {
+        "season": 2019,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/mclaren/lannor01/2026mclarenlannor01right"
+  },
+  {
+    "id": "piastri",
+    "code": "PIA",
+    "number": 81,
+    "givenName": "Oscar",
+    "familyName": "Piastri",
+    "nationality": "Australian",
+    "country": "Australia",
+    "countryCode": "au",
+    "dateOfBirth": "2001-04-06",
+    "teamId": "mclaren",
+    "standing": {
+      "position": 7,
+      "points": 144,
+      "wins": 0
+    },
+    "season": {
+      "races": 16,
+      "wins": 0,
+      "podiums": 2,
+      "poles": 0,
+      "bestFinish": 2,
+      "dnfs": 1,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 88,
+      "wins": 9,
+      "podiums": 28,
+      "poles": 6,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2023,
+        "race": "Bahrain Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/mclaren/oscpia01/2026mclarenoscpia01right"
+  },
+  {
+    "id": "lawson",
+    "code": "LAW",
+    "number": 30,
+    "givenName": "Liam",
+    "familyName": "Lawson",
+    "nationality": "New Zealander",
+    "country": "New Zealand",
+    "countryCode": "nz",
+    "dateOfBirth": "2002-02-11",
+    "teamId": "rb",
+    "standing": {
+      "position": 9,
+      "points": 77,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 5,
+      "dnfs": 1,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 53,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2023,
+        "race": "Dutch Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01right"
+  },
+  {
+    "id": "arvid_lindblad",
+    "code": "LIN",
+    "number": 41,
+    "givenName": "Arvid",
+    "familyName": "Lindblad",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "dateOfBirth": "2007-08-08",
+    "teamId": "rb",
+    "standing": {
+      "position": 11,
+      "points": 38,
+      "wins": 0
+    },
+    "season": {
+      "races": 17,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 6,
+      "dnfs": 0,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2026,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/racingbulls/arvlin01/2026racingbullsarvlin01right"
+  },
+  {
+    "id": "gasly",
+    "code": "GAS",
+    "number": 10,
+    "givenName": "Pierre",
+    "familyName": "Gasly",
+    "nationality": "French",
+    "country": "France",
+    "countryCode": "fr",
+    "dateOfBirth": "1996-02-07",
+    "teamId": "alpine",
+    "standing": {
+      "position": 10,
+      "points": 42,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 1,
+      "bestFinish": 6,
+      "dnfs": 2,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 196,
+      "wins": 1,
+      "podiums": 5,
+      "poles": 1,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2017,
+        "race": "Malaysian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/alpine/piegas01/2026alpinepiegas01right"
+  },
+  {
+    "id": "colapinto",
+    "code": "COL",
+    "number": 43,
+    "givenName": "Franco",
+    "familyName": "Colapinto",
+    "nationality": "Argentine",
+    "country": "Argentina",
+    "countryCode": "ar",
+    "dateOfBirth": "2003-05-27",
+    "teamId": "alpine",
+    "standing": {
+      "position": 12,
+      "points": 27,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 6,
+      "dnfs": 3,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 45,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2024,
+        "race": "Italian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/alpine/fracol01/2026alpinefracol01right"
+  },
+  {
+    "id": "bearman",
+    "code": "BEA",
+    "number": 87,
+    "givenName": "Oliver",
+    "familyName": "Bearman",
+    "nationality": "British",
+    "country": "United Kingdom",
+    "countryCode": "gb",
+    "dateOfBirth": "2005-05-08",
+    "teamId": "haas",
+    "standing": {
+      "position": 13,
+      "points": 23,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 5,
+      "dnfs": 4,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 45,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2024,
+        "race": "Saudi Arabian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/haasf1team/olibea01/2026haasf1teamolibea01right"
+  },
+  {
+    "id": "ocon",
+    "code": "OCO",
+    "number": 31,
+    "givenName": "Esteban",
+    "familyName": "Ocon",
+    "nationality": "French",
+    "country": "France",
+    "countryCode": "fr",
+    "dateOfBirth": "1996-09-17",
+    "teamId": "haas",
+    "standing": {
+      "position": 16,
+      "points": 7,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 1,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 198,
+      "wins": 1,
+      "podiums": 4,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2016,
+        "race": "Belgian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/haasf1team/estoco01/2026haasf1teamestoco01right"
+  },
+  {
+    "id": "hulkenberg",
+    "code": "HUL",
+    "number": 27,
+    "givenName": "Nico",
+    "familyName": "Hülkenberg",
+    "nationality": "German",
+    "country": "Germany",
+    "countryCode": "de",
+    "dateOfBirth": "1987-08-19",
+    "teamId": "audi",
+    "standing": {
+      "position": 14,
+      "points": 13,
+      "wins": 0
+    },
+    "season": {
+      "races": 17,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 3,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 272,
+      "wins": 0,
+      "podiums": 1,
+      "poles": 1,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2010,
+        "race": "Bahrain Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/audi/nichul01/2026audinichul01right"
+  },
+  {
+    "id": "bortoleto",
+    "code": "BOR",
+    "number": 5,
+    "givenName": "Gabriel",
+    "familyName": "Bortoleto",
+    "nationality": "Brazilian",
+    "country": "Brazil",
+    "countryCode": "br",
+    "dateOfBirth": "2004-10-14",
+    "teamId": "audi",
+    "standing": {
+      "position": 15,
+      "points": 10,
+      "wins": 0
+    },
+    "season": {
+      "races": 17,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 1,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 42,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2025,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/audi/gabbor01/2026audigabbor01right"
+  },
+  {
+    "id": "sainz",
+    "code": "SAI",
+    "number": 55,
+    "givenName": "Carlos",
+    "familyName": "Sainz",
+    "nationality": "Spanish",
+    "country": "Spain",
+    "countryCode": "es",
+    "dateOfBirth": "1994-09-01",
+    "teamId": "williams",
+    "standing": {
+      "position": 18,
+      "points": 7,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 9,
+      "dnfs": 2,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 250,
+      "wins": 4,
+      "podiums": 29,
+      "poles": 6,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2015,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/williams/carsai01/2026williamscarsai01right"
+  },
+  {
+    "id": "albon",
+    "code": "ALB",
+    "number": 23,
+    "givenName": "Alexander",
+    "familyName": "Albon",
+    "nationality": "Thai",
+    "country": "Thailand",
+    "countryCode": "th",
+    "dateOfBirth": "1996-03-23",
+    "teamId": "williams",
+    "standing": {
+      "position": 19,
+      "points": 5,
+      "wins": 0
+    },
+    "season": {
+      "races": 17,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 5,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 147,
+      "wins": 0,
+      "podiums": 2,
+      "poles": 0,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2019,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/williams/alealb01/2026williamsalealb01right"
+  },
+  {
+    "id": "alonso",
+    "code": "ALO",
+    "number": 14,
+    "givenName": "Fernando",
+    "familyName": "Alonso",
+    "nationality": "Spanish",
+    "country": "Spain",
+    "countryCode": "es",
+    "dateOfBirth": "1981-07-29",
+    "teamId": "aston_martin",
+    "standing": {
+      "position": 17,
+      "points": 7,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 8,
+      "dnfs": 6,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 446,
+      "wins": 32,
+      "podiums": 106,
+      "poles": 22,
+      "titles": 2,
+      "titleYears": [
+        2005,
+        2006
+      ],
+      "debut": {
+        "season": 2001,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/astonmartin/feralo01/2026astonmartinferalo01right"
+  },
+  {
+    "id": "stroll",
+    "code": "STR",
+    "number": 18,
+    "givenName": "Lance",
+    "familyName": "Stroll",
+    "nationality": "Canadian",
+    "country": "Canada",
+    "countryCode": "ca",
+    "dateOfBirth": "1998-10-29",
+    "teamId": "aston_martin",
+    "standing": {
+      "position": 21,
+      "points": 0,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 12,
+      "dnfs": 12,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 209,
+      "wins": 0,
+      "podiums": 3,
+      "poles": 1,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2017,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/astonmartin/lanstr01/2026astonmartinlanstr01right"
+  },
+  {
+    "id": "bottas",
+    "code": "BOT",
+    "number": 77,
+    "givenName": "Valtteri",
+    "familyName": "Bottas",
+    "nationality": "Finnish",
+    "country": "Finland",
+    "countryCode": "fi",
+    "dateOfBirth": "1989-08-28",
+    "teamId": "cadillac",
+    "standing": {
+      "position": 22,
+      "points": 0,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 13,
+      "dnfs": 8,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 265,
+      "wins": 10,
+      "podiums": 67,
+      "poles": 20,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2013,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/cadillac/valbot01/2026cadillacvalbot01right"
+  },
+  {
+    "id": "perez",
+    "code": "PER",
+    "number": 11,
+    "givenName": "Sergio",
+    "familyName": "Pérez",
+    "nationality": "Mexican",
+    "country": "Mexico",
+    "countryCode": "mx",
+    "dateOfBirth": "1990-01-26",
+    "teamId": "cadillac",
+    "standing": {
+      "position": 23,
+      "points": 0,
+      "wins": 0
+    },
+    "season": {
+      "races": 18,
+      "wins": 0,
+      "podiums": 0,
+      "poles": 0,
+      "bestFinish": 14,
+      "dnfs": 5,
+      "fastestLaps": 0
+    },
+    "career": {
+      "starts": 301,
+      "wins": 6,
+      "podiums": 39,
+      "poles": 3,
+      "titles": 0,
+      "titleYears": [],
+      "debut": {
+        "season": 2011,
+        "race": "Australian Grand Prix"
+      }
+    },
+    "photo": "common/f1/2026/cadillac/serper01/2026cadillacserper01right"
+  }
+]

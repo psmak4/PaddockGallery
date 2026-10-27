@@ -1,0 +1,60 @@
+.viewer {
+  --strip-space: 112px;
+  --bar-space: 62px;
+  --arrow-space: 180px;
+  --stage-height: calc(100dvh - var(--site-header-height) - var(--bar-space) - var(--strip-space) - 24px);
+  --card-height: min(var(--stage-height), calc((100vw - var(--arrow-space)) * 88 / 63));
+  /* Landscape (team) cards: as wide as fits, but not wider than about 800px on a big screen. */
+  --landscape-height: min(var(--stage-height), calc((100vw - var(--arrow-space)) * 63 / 88), 580px);
+  /* Full-screen behind the site header, so its glass blurs the card backdrop; content starts below it. */
+  position: fixed;
+  inset: 0;
+  padding-top: var(--site-header-height);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: var(--viewer-bg);
+  color: var(--viewer-text);
+  overflow: hidden;
+  color-scheme: dark;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-width: 0;
+  touch-action: pan-y;
+}
+
+/* Phones: the site header is hidden in the viewer (SiteHeader's data-immersive). */
+@media (max-width: 640px) {
+  .viewer {
+    --site-header-height: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .viewer {
+    --arrow-space: 80px;
+    --strip-space: 96px;
+  }
+  .stage {
+    gap: 0;
+  }
+}
+
+.strip {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}

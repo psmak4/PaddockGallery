@@ -1,0 +1,301 @@
+/* The card faces. Every size is in container query units (cqw: 1% of the card's width), so one card
+   design scales from the thumbnail strip to the viewer. --team is the team colour. */
+.card {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 63 / 88;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: 4.5% / 3.2%;
+  color: #fff;
+  font-family: var(--display-font);
+  text-align: left;
+  background:
+    radial-gradient(110% 70% at 85% 8%, color-mix(in srgb, var(--team) 75%, #fff 25%), transparent 62%),
+    linear-gradient(162deg, var(--team) 0%, color-mix(in srgb, var(--team) 58%, #0b0a0a) 62%, #0b0a0a 100%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--team) 50%, rgba(255, 255, 255, 0.35));
+}
+
+/* Darkens the bottom so the name and stats read over any photo; sits above the photo, below the text. */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(6, 5, 5, 0.92) 0%, rgba(6, 5, 5, 0.55) 26%, transparent 48%);
+  pointer-events: none;
+}
+
+/* Speed lines across the upper right. */
+.stripes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: repeating-linear-gradient(118deg, rgba(255, 255, 255, 0.09) 0 1.6cqw, transparent 1.6cqw 6cqw);
+  mask-image: linear-gradient(200deg, #000 0%, transparent 45%);
+}
+
+/* ---------- shared pieces ---------- */
+.top {
+  position: absolute;
+  top: 5cqw;
+  left: 6cqw;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 2.5cqw;
+}
+
+.flag {
+  width: 11cqw;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1cqw;
+  box-shadow: 0 0 0 0.4cqw rgba(0, 0, 0, 0.25);
+}
+
+
+/* ---------- driver ---------- */
+.number {
+  position: absolute;
+  top: 2cqw;
+  right: -3cqw;
+  z-index: 1;
+  font-size: 80cqw;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 0.7cqw rgba(255, 255, 255, 0.4);
+  transform: skewX(-9deg);
+}
+
+/* Without a photo the number is the hero: filled and centred. */
+.driver:not([data-has-photo]) .number {
+  top: 16cqw;
+  right: 0;
+  left: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.94);
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2cqw 8cqw rgba(0, 0, 0, 0.35);
+}
+
+/* formula1.com portraits are full-length cut-outs: show the head and torso. */
+.portrait {
+  position: absolute;
+  z-index: 2;
+  top: 10cqw;
+  left: 56%;
+  width: 104%;
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2cqw 4cqw rgba(0, 0, 0, 0.4));
+}
+
+.plate {
+  position: absolute;
+  left: 6cqw;
+  right: 6cqw;
+  bottom: 7cqw;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0.5cqw 2cqw rgba(0, 0, 0, 0.5);
+}
+
+.given {
+  font-size: 7cqw;
+  font-weight: 600;
+  line-height: 1.05;
+  opacity: 0.88;
+}
+
+.family {
+  font-size: 14cqw;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.teamLine {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  margin-top: 1.6cqw;
+  font-size: 4.6cqw;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.teamLine::before {
+  content: '';
+  width: 1.2cqw;
+  height: 4.6cqw;
+  border-radius: 0.6cqw;
+  background: var(--team);
+  box-shadow: 0 0 0 0.3cqw rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- team: landscape, so the car's side view fits whole ---------- */
+.team {
+  aspect-ratio: 88 / 63;
+  border-radius: 3.2% / 4.5%;
+}
+
+/* Only the drivers' names need darkening; the car sits clear of it. */
+.team::after {
+  background: linear-gradient(to top, rgba(6, 5, 5, 0.8) 0%, rgba(6, 5, 5, 0.35) 15%, transparent 26%);
+}
+
+.team .stripes {
+  mask-image: linear-gradient(215deg, #000 0%, transparent 55%);
+}
+
+/* The logo, then the team's name beside it. */
+.team .top {
+  top: 4.5cqw;
+  left: 4.5cqw;
+  right: 4.5cqw;
+  gap: 2.4cqw;
+}
+
+/* formula1.com's team logos are white on a transparent square. */
+.logo {
+  flex-shrink: 0;
+  width: 10cqw;
+  height: 10cqw;
+  object-fit: contain;
+  filter: drop-shadow(0 0.4cqw 1.2cqw rgba(0, 0, 0, 0.35));
+}
+
+.teamName {
+  min-width: 0;
+  margin: 0;
+  font-size: 7.6cqw;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  text-shadow: 0 0.4cqw 1.6cqw rgba(0, 0, 0, 0.45);
+}
+
+/* formula1.com's car renders are about 4.5:1 side views: the whole car, edge to edge. */
+.carWrap {
+  position: absolute;
+  left: 4cqw;
+  right: 4cqw;
+  top: 24cqw;
+  z-index: 2;
+}
+
+.car {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1.8cqw 1.6cqw rgba(0, 0, 0, 0.5));
+}
+
+/* The drivers: number, first name, LAST NAME. */
+.lineup {
+  position: absolute;
+  left: 4.5cqw;
+  right: 4.5cqw;
+  bottom: 4.5cqw;
+  z-index: 4;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1cqw 5cqw;
+  font-size: 4cqw;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0.3cqw 1.2cqw rgba(0, 0, 0, 0.5);
+}
+
+.lineup b {
+  margin-right: 1.2cqw;
+  font-weight: 900;
+  color: color-mix(in srgb, var(--team) 45%, #fff);
+}
+
+.lineupGiven {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ---------- special editions (see Editions.module.css) ---------- */
+/* The team colour stays on the small accents (the team line, driver numbers). */
+.card[data-edition='gold'] {
+  box-shadow:
+    inset 0 0 0 0.6cqw #f7d774,
+    inset 0 0 0 1cqw rgba(92, 58, 0, 0.55);
+}
+
+.card[data-edition='gold'] .number {
+  -webkit-text-stroke-color: rgba(70, 42, 0, 0.45);
+}
+
+.driver[data-edition='gold']:not([data-has-photo]) .number {
+  color: #fff8dc;
+  text-shadow:
+    0 0.4cqw 0 rgba(92, 58, 0, 0.6),
+    0 2cqw 8cqw rgba(0, 0, 0, 0.35);
+}
+
+.card[data-edition='gold'] .teamName {
+  text-shadow:
+    0 0.3cqw 0 rgba(70, 42, 0, 0.7),
+    0 0.6cqw 2.4cqw rgba(0, 0, 0, 0.55);
+}
+
+/* Carbon: a brushed-silver edge around the weave. */
+.card[data-edition='carbon'] {
+  box-shadow:
+    inset 0 0 0 0.5cqw #9aa1a9,
+    inset 0 0 0 0.9cqw rgba(0, 0, 0, 0.6);
+}
+
+.card[data-edition='carbon'] .number {
+  -webkit-text-stroke-color: rgba(220, 228, 236, 0.3);
+}
+
+/* Room for the edition's label beside the team name; long names wrap. */
+.team[data-edition] .top {
+  right: 30cqw;
+}
+
+.team [data-edition-label] {
+  top: 6.4cqw;
+  right: 4.5cqw;
+  font-size: max(7px, 2.1cqw);
+}
+
+/* Tiny cards (the thumbnail strip): just the colour, a driver's number, and the photo. */
+@container (max-width: 110px) {
+  .card [data-edition-label],
+  .top,
+  .plate,
+  .lineup,
+  .teamName {
+    display: none;
+  }
+  .team::after {
+    display: none;
+  }
+  .carWrap {
+    top: 25cqw;
+  }
+}
