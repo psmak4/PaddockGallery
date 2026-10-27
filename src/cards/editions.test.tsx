@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { stubDataFetch } from '../test/fetchStub';
 import { renderRoute } from '../test/render';
-import { ODDS, rollEdition } from './editions';
+import { ODDS, pickVariant, rollEdition } from './editions';
 
 const cards = (edition: string) => document.querySelectorAll(`[data-edition="${edition}"]`).length;
 const toggle = (name: string) => screen.getByRole('button', { name: new RegExp(`^${name} cards: .* \\(development only\\)$`) });
@@ -14,7 +14,8 @@ beforeEach(() => {
 test(`each edition comes up 1 time in ${ODDS}, never both, and a card keeps its roll for the visit`, () => {
   expect(rollEdition('drivers/a', () => 0.5 / ODDS)).toBe('gold');
   expect(rollEdition('drivers/b', () => 1.5 / ODDS)).toBe('carbon');
-  expect(rollEdition('drivers/c', () => 2 / ODDS)).toBeNull();
+  expect(rollEdition('drivers/v', () => 2.5 / ODDS)).toBe('variation');
+  expect(rollEdition('drivers/c', () => 3 / ODDS)).toBeNull();
   // Already rolled: a later roll doesn't change it.
   expect(rollEdition('drivers/a', () => 0.99)).toBe('gold');
   expect(rollEdition('drivers/c', () => 0)).toBeNull();
@@ -69,4 +70,36 @@ test('"Never" turns off a rolled edition', async () => {
   renderRoute('/');
   await screen.findByRole('link', { name: 'Lando Norris' });
   expect(document.querySelectorAll('[data-edition]')).toHaveLength(0);
+});
+
+const F1 = 'https://media.formula1.com/image/upload/';
+
+test('an Image Variation keeps the regular card but shows another official pose, picked once per visit', async () => {
+  vi.spyOn(Math, 'random').mockReturnValue(2.5 / ODDS); // rolls the variation; picks the first pose
+  stubDataFetch();
+  renderRoute('/');
+  const norris = await screen.findByRole('link', { name: 'Lando Norris' });
+  const photos = [...norris.querySelectorAll('[data-testid="photo"]')].map(img => img.getAttribute('src'));
+  expect(photos.some(src => src?.startsWith(F1) && src.endsWith('2026mclarenlannor01left.webp'))).toBe(true);
+  expect(photos.some(src => src?.endsWith('2026mclarenlannor01right.webp'))).toBe(false);
+  expect(norris.querySelector('[data-edition="variation"]')).not.toBeNull();
+  expect(screen.getAllByTitle('Image Variation: a rare edition of this card').length).toBeGreaterThan(0);
+  // A driver with no alternate pose stays a regular card.
+  expect(screen.getByRole('link', { name: 'Liam Lawson' }).querySelector('[data-edition]')).toBeNull();
+  // The pick sticks for the visit.
+  expect(pickVariant('drivers/norris', 2, () => 0.99)).toBe(0);
+});
+
+test('team variations show the car from its other side', async () => {
+  vi.spyOn(Math, 'random').mockReturnValue(0.5);
+  localStorage.setItem('paddockgallery.edition.variation', 'always');
+  stubDataFetch();
+  renderRoute('/teams');
+  const mclaren = await screen.findByRole('link', { name: 'McLaren' });
+  const photos = [...mclaren.querySelectorAll('[data-testid="photo"]')].map(img => img.getAttribute('src'));
+  expect(photos.some(src => src?.endsWith('2026mclarencarleft.webp'))).toBe(true);
+  expect(photos.some(src => src?.endsWith('2026mclarencarright.webp'))).toBe(false);
+  // Racing Bulls has no other side in the fixtures: no variation.
+  expect(screen.getByRole('link', { name: 'Racing Bulls' }).querySelector('[data-edition]')).toBeNull();
+  expect(toggle('Image Variation')).toHaveAccessibleName('Image Variation cards: Always (development only)');
 });

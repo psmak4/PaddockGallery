@@ -37,7 +37,7 @@ test('drivers get flags from their nationality and photos only when they exist; 
     standing: { position: 2, points: 300, wins: 5 },
   });
   expect(Object.keys(norris).sort()).toEqual(
-    ['career', 'code', 'country', 'countryCode', 'dateOfBirth', 'familyName', 'givenName', 'id', 'nationality', 'number', 'photo', 'season', 'standing', 'teamId'],
+    ['altPhotos', 'career', 'code', 'country', 'countryCode', 'dateOfBirth', 'familyName', 'givenName', 'id', 'nationality', 'number', 'photo', 'season', 'standing', 'teamId'],
   );
   expect(drivers.find(d => d.id === 'piastri')!.photo).toBeNull();
 });
@@ -55,7 +55,7 @@ test('principals come from the curated file, their flag from its nationality', (
   expect(teams[1].principal).toEqual({ name: 'Alan Permane', since: '2025-07', country: null, countryCode: null });
   expect(issues.some(i => i.kind === 'gap' && i.message.startsWith('Alan Permane: no known "nationality"'))).toBe(true);
   expect(Object.keys(teams[0]).sort()).toEqual(
-    ['car', 'colour', 'country', 'countryCode', 'driverIds', 'id', 'logo', 'name', 'nationality', 'principal', 'season', 'standing'],
+    ['altCar', 'car', 'colour', 'country', 'countryCode', 'driverIds', 'id', 'logo', 'name', 'nationality', 'principal', 'season', 'standing'],
   );
 });
 
@@ -90,9 +90,23 @@ test('applyOverride replaces arrays and null rather than merging them', () => {
   expect(applyOverride({ a: [1, 2], b: { c: 1 } }, { a: [3], b: null })).toEqual({ a: [3], b: null });
 });
 
+test('Image Variation photos: only the alternate poses and car sides that exist', () => {
+  const { drivers, teams } = assemble(buildInputs());
+  expect(drivers.find(d => d.id === 'norris')!.altPhotos).toEqual(['common/f1/2026/mclaren/lannor01/2026mclarenlannor01left']);
+  // No main photo, no alternates.
+  expect(drivers.find(d => d.id === 'piastri')!.altPhotos).toEqual([]);
+  expect(teams[0].altCar).toBe('common/f1/2026/mclaren/2026mclarencarleft');
+  expect(teams[1].altCar).toBeNull();
+});
+
 test('image candidates use formula1.com folder names from OpenF1', () => {
-  const { drivers, cars, logos } = imageCandidates(2026, latestRace, buildInputs().openf1);
+  const { drivers, cars, logos, altPhotos, altCars } = imageCandidates(2026, latestRace, buildInputs().openf1);
   expect(drivers.get('lawson')).toBe('common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01right');
   expect(cars.get('rb')).toBe('common/f1/2026/racingbulls/2026racingbullscarright');
   expect(logos.get('rb')).toBe('common/f1/2026/racingbulls/2026racingbullslogowhite');
+  expect(altPhotos.get('lawson')).toEqual([
+    'common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01left',
+    'common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01front',
+  ]);
+  expect(altCars.get('rb')).toBe('common/f1/2026/racingbulls/2026racingbullscarleft');
 });

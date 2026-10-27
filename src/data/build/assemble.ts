@@ -3,7 +3,7 @@
 import type { CareerStats, Driver, Meta, Principal, Standing, Team } from '../types.ts';
 import { countryOf } from './countries.ts';
 import type { CareerCounts, RawConstructor, RawConstructorStanding, RawDriverStanding, RawRace, RawResult } from './jolpica.ts';
-import { carPath, driverPhotoPath, f1DriverRef, f1TeamSlug, logoPath, normalizeColour, type OpenF1Driver } from './openf1.ts';
+import { alternateCarPath, alternatePhotoPaths, carPath, driverPhotoPath, f1DriverRef, f1TeamSlug, logoPath, normalizeColour, type OpenF1Driver } from './openf1.ts';
 import { seasonStats } from './season.ts';
 
 export type IssueKind = 'mismatch' | 'gap' | 'note';
@@ -86,7 +86,7 @@ export function teamNames(results: RawResult[], matched: Map<string, OpenF1Drive
   return new Map([...votes].map(([id, names]) => [id, [...names].sort((a, b) => b[1] - a[1])[0][0]]));
 }
 
-/** The formula1.com images the build should check exist: each driver's portrait, each team's car and logo. */
+/** The formula1.com images the build should check exist: each driver's portraits, each team's car (both sides) and logo. */
 export function imageCandidates(season: number, latest: RawRace, openf1: OpenF1Driver[]) {
   const results = latest.Results ?? [];
   const matched = matchOpenF1(results, openf1);
@@ -99,7 +99,9 @@ export function imageCandidates(season: number, latest: RawRace, openf1: OpenF1D
   }
   const cars = new Map([...names].map(([id, name]) => [id, carPath(season, f1TeamSlug(name))]));
   const logos = new Map([...names].map(([id, name]) => [id, logoPath(season, f1TeamSlug(name))]));
-  return { drivers, cars, logos };
+  const altPhotos = new Map([...drivers].map(([id, path]) => [id, alternatePhotoPaths(path)]));
+  const altCars = new Map([...cars].map(([id, path]) => [id, alternateCarPath(path)]));
+  return { drivers, cars, logos, altPhotos, altCars };
 }
 
 function career(counts: CareerCounts | undefined, titleYears: number[]): CareerStats {
@@ -232,6 +234,7 @@ export function assemble(input: BuildInputs): BuildOutput {
       standing: standing(teamStandingById.get(id)),
       season: season.teams.get(id) ?? { ...noSeason, oneTwos: 0, headToHead: Object.fromEntries(driverIds.map(d => [d, 0])) },
       car,
+      altCar: car ? exists(images.altCars.get(id)) : null,
       logo,
     };
   });
@@ -260,6 +263,7 @@ export function assemble(input: BuildInputs): BuildOutput {
       season: season.drivers.get(d.driverId) ?? noSeason,
       career: career(input.careers.get(d.driverId), driverTitles.get(d.driverId) ?? []),
       photo,
+      altPhotos: photo ? (images.altPhotos.get(d.driverId) ?? []).filter(path => input.existingImages.has(path)) : [],
     };
   });
 

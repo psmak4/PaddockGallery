@@ -1,8 +1,8 @@
 import type { CSSProperties } from 'react';
 import type { Driver, Team } from '../data/types';
 import { PhotoImg } from './PhotoImg';
-import { EditionField, EditionFinish } from './EditionLayers';
-import { useEdition } from './editions';
+import { EditionField, EditionFinish, hasField } from './EditionLayers';
+import { pickVariant, useEdition } from './editions';
 import styles from './Cards.module.css';
 
 interface DriverCardProps {
@@ -21,19 +21,22 @@ interface DriverCardProps {
  */
 export function DriverCard({ driver, team, photoWidth = 400, eager }: DriverCardProps) {
   const style = { '--team': team?.colour ?? '#666' } as CSSProperties;
-  const edition = useEdition(`drivers/${driver.id}`);
+  const key = `drivers/${driver.id}`;
+  const edition = useEdition(key, e => e !== 'variation' || driver.altPhotos.length > 0);
+  // An Image Variation shows one of the driver's other official poses instead.
+  const photo = edition === 'variation' ? driver.altPhotos[pickVariant(key, driver.altPhotos.length)] : driver.photo;
   return (
     <div
       className={`${styles.card} ${styles.driver}`}
       style={style}
-      data-has-photo={Boolean(driver.photo) || undefined}
+      data-has-photo={Boolean(photo) || undefined}
       data-edition={edition ?? undefined}
     >
-      {edition ? <EditionField edition={edition} /> : <div className={styles.stripes} aria-hidden="true" />}
+      {edition && hasField(edition) ? <EditionField edition={edition} /> : <div className={styles.stripes} aria-hidden="true" />}
       <span className={styles.number} aria-hidden="true">
         {driver.number ?? driver.code}
       </span>
-      <PhotoImg path={driver.photo} width={photoWidth} className={styles.portrait} eager={eager} />
+      <PhotoImg path={photo} width={photoWidth} className={styles.portrait} eager={eager} />
       <div className={styles.top}>
         <PhotoImg path={team?.logo ?? null} width={160} className={styles.logo} eager={eager} />
       </div>

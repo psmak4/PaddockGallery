@@ -1,9 +1,9 @@
 # Data build report
 
 - Season 2026, after round 18 of 23 (United States Grand Prix, 2026-10-25).
-- 11 teams, 22 drivers; 22 driver photos, 11 car images and 11 logos found on formula1.com.
+- 11 teams, 22 drivers; 22 driver photos, 11 car images and 11 logos found on formula1.com; alternate poses for 22 drivers and 11 cars (Image Variation).
 - Poles count races started from grid slot 1 (Jolpica's qualifying data is incomplete before 2003); grid penalties can make this differ from the official count.
-- Built 2026-10-27T07:00:52.714Z. Jolpica requests this run: 1; cache hits 188, misses 0.
+- Built 2026-10-27T13:20:52.721Z. Jolpica requests this run: 1; cache hits 188, misses 55.
 
 ## Mismatches between sources (0)
 

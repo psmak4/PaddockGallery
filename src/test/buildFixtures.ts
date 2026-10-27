@@ -98,7 +98,14 @@ export function buildInputs(overrides: Partial<BuildInputs> = {}): BuildInputs {
       rb: { name: 'Alan Permane', since: '2025-07', verify: true },
     },
     overrides: {},
-    existingImages: new Set([mclarenPath, mclarenLogo, norrisPath]),
+    // Norris's left pose and McLaren's left side exist; his front pose doesn't.
+    existingImages: new Set([
+      mclarenPath,
+      mclarenLogo,
+      norrisPath,
+      'common/f1/2026/mclaren/lannor01/2026mclarenlannor01left',
+      'common/f1/2026/mclaren/2026mclarencarleft',
+    ]),
     ...overrides,
   };
 }

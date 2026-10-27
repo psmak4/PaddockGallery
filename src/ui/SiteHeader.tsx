@@ -34,7 +34,7 @@ const TABS: { kind: CollectionKind; label: string; icon: ReactNode }[] = [
 ];
 
 const MODE_LABELS: Record<EditionMode, string> = { random: 'Random', always: 'Always', never: 'Never' };
-const CHIPS: Record<Edition, string> = { gold: 'Gold', carbon: 'Carbon' };
+const CHIPS: Record<Edition, string> = { gold: 'Gold', carbon: 'Carbon', variation: 'Variation' };
 
 /** Development only: cycles one special edition between random (as in production), always and never. */
 function EditionToggle({ edition }: { edition: Edition }) {

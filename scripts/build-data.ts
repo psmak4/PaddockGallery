@@ -88,7 +88,8 @@ async function main() {
   // formula1.com photos and logos are hotlinked at runtime; the build only checks they exist.
   const candidates = imageCandidates(season, latest, openf1);
   const existingImages = new Set<string>();
-  for (const path of [...candidates.drivers.values(), ...candidates.cars.values(), ...candidates.logos.values()]) {
+  const paths = [...candidates.drivers.values(), ...candidates.cars.values(), ...candidates.logos.values(), ...[...candidates.altPhotos.values()].flat(), ...candidates.altCars.values()];
+  for (const path of paths) {
     const ok = await cache.through(f1ImageUrl(path, 100), week, () => urlExists(f1ImageUrl(path, 100)));
     if (ok) existingImages.add(path);
   }
@@ -133,7 +134,7 @@ async function main() {
 
   const summary = [
     `Season ${season}, after round ${latest.round} of ${totalRounds} (${latest.raceName}, ${latest.date}).`,
-    `${out.teams.length} teams, ${out.drivers.length} drivers; ${out.drivers.filter(d => d.photo).length} driver photos, ${out.teams.filter(t => t.car).length} car images and ${out.teams.filter(t => t.logo).length} logos found on formula1.com.`,
+    `${out.teams.length} teams, ${out.drivers.length} drivers; ${out.drivers.filter(d => d.photo).length} driver photos, ${out.teams.filter(t => t.car).length} car images and ${out.teams.filter(t => t.logo).length} logos found on formula1.com; alternate poses for ${out.drivers.filter(d => d.altPhotos.length).length} drivers and ${out.teams.filter(t => t.altCar).length} cars (Image Variation).`,
     'Poles count races started from grid slot 1 (Jolpica\'s qualifying data is incomplete before 2003); grid penalties can make this differ from the official count.',
     `Built ${new Date().toISOString()}. Jolpica requests this run: ${jolpica.requests}; cache hits ${cache.hits}, misses ${cache.misses}.`,
   ];

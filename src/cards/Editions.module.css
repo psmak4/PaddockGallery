@@ -1,5 +1,6 @@
-/* Special editions (src/cards/editions.ts). Each replaces the card's team-colour field, adds a sheen
-   over the whole card, and a small label in the top-right corner. The card face sets data-edition. */
+/* Special editions (src/cards/editions.ts). Gold and Carbon replace the card's team-colour field and
+   add a sheen over the whole card; every edition has a small label in the top-right corner. An Image
+   Variation only swaps the photo (in the card component). The card face sets data-edition. */
 
 /* ---------- Paddock Gold ---------- */
 
@@ -132,6 +133,12 @@
   color: #e6ebf0;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 0 1px rgba(200, 210, 220, 0.45);
+}
+
+.variationLabel {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.38);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {

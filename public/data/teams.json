@@ -36,6 +36,7 @@
       }
     },
     "car": "common/f1/2026/mercedes/2026mercedescarright",
+    "altCar": "common/f1/2026/mercedes/2026mercedescarleft",
     "logo": "common/f1/2026/mercedes/2026mercedeslogowhite"
   },
   {
@@ -75,6 +76,7 @@
       }
     },
     "car": "common/f1/2026/ferrari/2026ferraricarright",
+    "altCar": "common/f1/2026/ferrari/2026ferraricarleft",
     "logo": "common/f1/2026/ferrari/2026ferrarilogowhite"
   },
   {
@@ -114,6 +116,7 @@
       }
     },
     "car": "common/f1/2026/redbullracing/2026redbullracingcarright",
+    "altCar": "common/f1/2026/redbullracing/2026redbullracingcarleft",
     "logo": "common/f1/2026/redbullracing/2026redbullracinglogowhite"
   },
   {
@@ -153,6 +156,7 @@
       }
     },
     "car": "common/f1/2026/mclaren/2026mclarencarright",
+    "altCar": "common/f1/2026/mclaren/2026mclarencarleft",
     "logo": "common/f1/2026/mclaren/2026mclarenlogowhite"
   },
   {
@@ -192,6 +196,7 @@
       }
     },
     "car": "common/f1/2026/racingbulls/2026racingbullscarright",
+    "altCar": "common/f1/2026/racingbulls/2026racingbullscarleft",
     "logo": "common/f1/2026/racingbulls/2026racingbullslogowhite"
   },
   {
@@ -231,6 +236,7 @@
       }
     },
     "car": "common/f1/2026/alpine/2026alpinecarright",
+    "altCar": "common/f1/2026/alpine/2026alpinecarleft",
     "logo": "common/f1/2026/alpine/2026alpinelogowhite"
   },
   {
@@ -270,6 +276,7 @@
       }
     },
     "car": "common/f1/2026/haasf1team/2026haasf1teamcarright",
+    "altCar": "common/f1/2026/haasf1team/2026haasf1teamcarleft",
     "logo": "common/f1/2026/haasf1team/2026haasf1teamlogowhite"
   },
   {
@@ -309,6 +316,7 @@
       }
     },
     "car": "common/f1/2026/audi/2026audicarright",
+    "altCar": "common/f1/2026/audi/2026audicarleft",
     "logo": "common/f1/2026/audi/2026audilogowhite"
   },
   {
@@ -348,6 +356,7 @@
       }
     },
     "car": "common/f1/2026/williams/2026williamscarright",
+    "altCar": "common/f1/2026/williams/2026williamscarleft",
     "logo": "common/f1/2026/williams/2026williamslogowhite"
   },
   {
@@ -387,6 +396,7 @@
       }
     },
     "car": "common/f1/2026/astonmartin/2026astonmartincarright",
+    "altCar": "common/f1/2026/astonmartin/2026astonmartincarleft",
     "logo": "common/f1/2026/astonmartin/2026astonmartinlogowhite"
   },
   {
@@ -426,6 +436,7 @@
       }
     },
     "car": "common/f1/2026/cadillac/2026cadillaccarright",
+    "altCar": "common/f1/2026/cadillac/2026cadillaccarleft",
     "logo": "common/f1/2026/cadillac/2026cadillaclogowhite"
   }
 ]

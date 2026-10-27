@@ -35,6 +35,17 @@ export function carPath(season: number, teamSlug: string): string {
   return `common/f1/${season}/${teamSlug}/${season}${teamSlug}carright`;
 }
 
+/** A portrait's other official poses: "…right" → ["…left", "…front"]. */
+export function alternatePhotoPaths(photoPath: string): string[] {
+  const base = photoPath.replace(/right$/, '');
+  return [`${base}left`, `${base}front`];
+}
+
+/** The car's other side: "…carright" → "…carleft". */
+export function alternateCarPath(carPathRight: string): string {
+  return carPathRight.replace(/carright$/, 'carleft');
+}
+
 /** The white version of the team's logo (formula1.com also has "logo" in colour and "logoblack"). */
 export function logoPath(season: number, teamSlug: string): string {
   return `common/f1/${season}/${teamSlug}/${season}${teamSlug}logowhite`;

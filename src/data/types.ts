@@ -62,6 +62,8 @@ export interface Driver {
   career: CareerStats;
   /** formula1.com media path (no extension), sized at runtime by f1ImageUrl; null when there is none. */
   photo: string | null;
+  /** The other official poses (left, holding the helmet; front), for the Image Variation edition. */
+  altPhotos: string[];
 }
 
 /** From data/curated/principals.json (no API covers team principals). */
@@ -88,6 +90,8 @@ export interface Team {
   season: TeamSeasonStats;
   /** formula1.com media path of the car's side view; null when there is none. */
   car: string | null;
+  /** The car's other side, for the Image Variation edition; null when there is none. */
+  altCar: string | null;
   /** formula1.com media path of the team's logo (white, square); null when there is none. */
   logo: string | null;
 }

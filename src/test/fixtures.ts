@@ -42,6 +42,7 @@ const driver = (id: string, code: string, number: number, givenName: string, fam
   season: season(2, 6),
   career: career(10),
   photo: null,
+  altPhotos: [],
   ...extra,
 });
 
@@ -57,6 +58,7 @@ export const drivers: Driver[] = [
   driver('norris', 'NOR', 1, 'Lando', 'Norris', 'mclaren', 2, {
     career: career(12, [2025]),
     photo: 'common/f1/2026/mclaren/lannor01/2026mclarenlannor01right',
+    altPhotos: ['common/f1/2026/mclaren/lannor01/2026mclarenlannor01left', 'common/f1/2026/mclaren/lannor01/2026mclarenlannor01front'],
   }),
   driver('lawson', 'LAW', 30, 'Liam', 'Lawson', 'rb', 9),
   driver('arvid_lindblad', 'LIN', 41, 'Arvid', 'Lindblad', 'rb', 11),
@@ -75,6 +77,7 @@ export const teams: Team[] = [
     standing: { position: 1, points: 620, wins: 11 },
     season: teamSeason(4, 12, { piastri: 8, norris: 10 }),
     car: 'common/f1/2026/mclaren/2026mclarencarright',
+    altCar: 'common/f1/2026/mclaren/2026mclarencarleft',
     logo: 'common/f1/2026/mclaren/2026mclarenlogowhite',
   },
   {
@@ -89,6 +92,7 @@ export const teams: Team[] = [
     standing: { position: 7, points: 80, wins: 0 },
     season: teamSeason(0, 0, { lawson: 0, arvid_lindblad: 0 }),
     car: null,
+    altCar: null,
     logo: null,
   },
 ];

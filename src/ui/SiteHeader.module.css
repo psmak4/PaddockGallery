@@ -173,6 +173,17 @@
   box-shadow: inset 0 0 0 1px rgba(200, 210, 220, 0.5);
 }
 
+.devToggle[data-toggle-edition='variation'] {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.devToggle[data-toggle-edition='variation'] b {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
 .devToggle[data-mode='never'] b {
   filter: grayscale(1);
   opacity: 0.6;
